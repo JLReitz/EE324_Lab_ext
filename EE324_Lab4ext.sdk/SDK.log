@@ -1,0 +1,1048 @@
+11:19:05 INFO  : Registering command handlers for SDK TCF services
+11:19:07 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\temp_xsdb_launch_script.tcl
+11:19:11 INFO  : XSCT server has started successfully.
+11:19:14 INFO  : Processing command line option -hwspec C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf.
+11:19:14 INFO  : Successfully done setting XSCT server connection channel  
+11:19:14 INFO  : Successfully done setting SDK workspace  
+11:38:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:38:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+11:38:08 INFO  : FPGA configured successfully with bitstream "C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/System_wrapper.bit"
+11:38:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+11:38:18 INFO  : 'fpga -state' command is executed.
+11:38:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:38:18 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+11:38:18 INFO  : 'jtag frequency' command is executed.
+11:38:18 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:38:18 INFO  : Context for 'APU' is selected.
+11:38:18 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+11:38:18 INFO  : 'configparams force-mem-access 1' command is executed.
+11:38:18 INFO  : Context for 'APU' is selected.
+11:38:18 INFO  : 'stop' command is executed.
+11:38:19 INFO  : 'ps7_init' command is executed.
+11:38:19 INFO  : 'ps7_post_config' command is executed.
+11:38:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:38:19 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+11:38:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:38:19 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:38:19 INFO  : 'configparams force-mem-access 0' command is executed.
+11:38:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:38:19 INFO  : Memory regions updated for context APU
+11:38:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:38:19 INFO  : 'con' command is executed.
+11:38:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+11:38:19 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+11:52:47 INFO  : Disconnected from the channel tcfchan#1.
+11:52:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+11:52:48 INFO  : 'fpga -state' command is executed.
+11:52:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:52:48 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+11:52:48 INFO  : 'jtag frequency' command is executed.
+11:52:48 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:52:48 INFO  : Context for 'APU' is selected.
+11:52:50 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+11:52:50 INFO  : 'configparams force-mem-access 1' command is executed.
+11:52:50 INFO  : Context for 'APU' is selected.
+11:52:50 INFO  : 'stop' command is executed.
+11:52:50 ERROR : Memory read error at 0xF8007080. AHB AP transaction error, DAP status f0000021
+11:52:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+----------------End of Script----------------
+
+11:52:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:52:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+11:52:58 INFO  : FPGA configured successfully with bitstream "C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/System_wrapper.bit"
+11:53:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+11:53:02 INFO  : 'fpga -state' command is executed.
+11:53:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:53:02 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+11:53:02 INFO  : 'jtag frequency' command is executed.
+11:53:02 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:53:02 INFO  : Context for 'APU' is selected.
+11:53:02 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+11:53:02 INFO  : 'configparams force-mem-access 1' command is executed.
+11:53:02 INFO  : Context for 'APU' is selected.
+11:53:02 INFO  : 'stop' command is executed.
+11:53:02 ERROR : AP transaction error, DAP status f0000021
+11:53:02 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+----------------End of Script----------------
+
+12:09:43 INFO  : Registering command handlers for SDK TCF services
+12:09:44 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\temp_xsdb_launch_script.tcl
+12:09:47 INFO  : XSCT server has started successfully.
+12:09:48 INFO  : Successfully done setting XSCT server connection channel  
+12:09:48 INFO  : Processing command line option -hwspec C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf.
+12:09:48 INFO  : Successfully done setting SDK workspace  
+12:09:48 INFO  : Checking for hwspec changes in the project System_wrapper_hw_platform_0.
+12:09:50 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1509649731757,  Project:1509646264592
+12:09:50 INFO  : The hardware specification for project 'System_wrapper_hw_platform_0' is different from C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf.
+12:09:50 INFO  : Copied contents of C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf into \System_wrapper_hw_platform_0\system.hdf.
+12:09:54 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+12:09:57 INFO  : 
+12:09:58 INFO  : Updating hardware inferred compiler options for LED_4ChannelPWM.
+12:09:58 INFO  : Clearing existing target manager status.
+12:09:58 WARN  : Given IPC port value is invalid. Using default port 2350
+12:09:58 WARN  : Given XMD timeout value is invalid. Using default value of 50000
+12:10:00 WARN  : Given XMD transaction timeout value is invalid. Using default value of 60000 milli seconds
+12:10:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:10:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+12:10:13 INFO  : FPGA configured successfully with bitstream "C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/System_wrapper.bit"
+12:10:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+12:10:19 INFO  : 'fpga -state' command is executed.
+12:10:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:10:20 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+12:10:20 INFO  : 'jtag frequency' command is executed.
+12:10:20 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:10:20 INFO  : Context for 'APU' is selected.
+12:10:21 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+12:10:21 INFO  : 'configparams force-mem-access 1' command is executed.
+12:10:21 INFO  : Context for 'APU' is selected.
+12:10:21 INFO  : 'stop' command is executed.
+12:10:21 INFO  : 'ps7_init' command is executed.
+12:10:21 INFO  : 'ps7_post_config' command is executed.
+12:10:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:10:21 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:10:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:10:22 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:10:22 INFO  : 'configparams force-mem-access 0' command is executed.
+12:10:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:10:22 INFO  : Memory regions updated for context APU
+12:10:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:10:22 INFO  : 'con' command is executed.
+12:10:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+12:10:22 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+12:13:08 INFO  : Disconnected from the channel tcfchan#1.
+12:13:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+12:13:09 INFO  : 'fpga -state' command is executed.
+12:13:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:13:10 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+12:13:10 INFO  : 'jtag frequency' command is executed.
+12:13:10 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:13:10 INFO  : Context for 'APU' is selected.
+12:13:12 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+12:13:12 INFO  : 'configparams force-mem-access 1' command is executed.
+12:13:12 INFO  : Context for 'APU' is selected.
+12:13:12 INFO  : 'stop' command is executed.
+12:13:13 INFO  : 'ps7_init' command is executed.
+12:13:13 INFO  : 'ps7_post_config' command is executed.
+12:13:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:13:13 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:13:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:13:13 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:13:13 INFO  : 'configparams force-mem-access 0' command is executed.
+12:13:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:13:13 INFO  : Memory regions updated for context APU
+12:13:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:13:13 INFO  : 'con' command is executed.
+12:13:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+12:13:13 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+14:25:18 INFO  : Disconnected from the channel tcfchan#2.
+14:25:19 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+14:39:14 INFO  : Registering command handlers for SDK TCF services
+14:39:14 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\temp_xsdb_launch_script.tcl
+14:39:17 INFO  : XSCT server has started successfully.
+14:39:18 INFO  : Processing command line option -hwspec C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf.
+14:39:18 INFO  : Successfully done setting XSCT server connection channel  
+14:39:18 INFO  : Checking for hwspec changes in the project System_wrapper_hw_platform_0.
+14:39:18 INFO  : Successfully done setting SDK workspace  
+14:42:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:42:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+14:42:22 INFO  : FPGA configured successfully with bitstream "C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/System_wrapper.bit"
+14:42:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+14:42:30 INFO  : 'fpga -state' command is executed.
+14:42:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:42:31 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+14:42:31 INFO  : 'jtag frequency' command is executed.
+14:42:31 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:42:31 INFO  : Context for 'APU' is selected.
+14:42:31 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+14:42:31 INFO  : 'configparams force-mem-access 1' command is executed.
+14:42:31 INFO  : Context for 'APU' is selected.
+14:42:31 INFO  : 'stop' command is executed.
+14:42:31 INFO  : 'ps7_init' command is executed.
+14:42:31 INFO  : 'ps7_post_config' command is executed.
+14:42:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:42:31 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:42:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:42:32 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:42:32 INFO  : 'configparams force-mem-access 0' command is executed.
+14:42:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:42:32 INFO  : Memory regions updated for context APU
+14:42:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:42:32 INFO  : 'con' command is executed.
+14:42:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+14:42:32 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+14:48:38 INFO  : Disconnected from the channel tcfchan#1.
+14:57:08 INFO  : Registering command handlers for SDK TCF services
+14:57:09 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\temp_xsdb_launch_script.tcl
+14:57:12 INFO  : XSCT server has started successfully.
+14:57:15 INFO  : Processing command line option -hwspec C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf.
+14:57:15 INFO  : Successfully done setting XSCT server connection channel  
+14:57:15 INFO  : Successfully done setting SDK workspace  
+14:57:15 INFO  : Checking for hwspec changes in the project System_wrapper_hw_platform_0.
+14:57:15 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1509659783980,  Project:1509649731757
+14:57:15 INFO  : The hardware specification for project 'System_wrapper_hw_platform_0' is different from C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf.
+14:57:16 INFO  : Copied contents of C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf into \System_wrapper_hw_platform_0\system.hdf.
+14:57:20 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+14:57:26 INFO  : 
+14:57:27 INFO  : Updating hardware inferred compiler options for LED_4ChannelPWM.
+14:57:27 INFO  : Clearing existing target manager status.
+14:57:27 WARN  : Given IPC port value is invalid. Using default port 2350
+14:57:27 WARN  : Given XMD timeout value is invalid. Using default value of 50000
+14:57:29 WARN  : Given XMD transaction timeout value is invalid. Using default value of 60000 milli seconds
+14:57:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:57:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+14:57:42 INFO  : FPGA configured successfully with bitstream "C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/System_wrapper.bit"
+14:57:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+14:57:51 INFO  : 'fpga -state' command is executed.
+14:57:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:57:52 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+14:57:52 INFO  : 'jtag frequency' command is executed.
+14:57:52 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:57:52 INFO  : Context for 'APU' is selected.
+14:57:52 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+14:57:52 INFO  : 'configparams force-mem-access 1' command is executed.
+14:57:52 INFO  : Context for 'APU' is selected.
+14:57:52 INFO  : 'stop' command is executed.
+14:57:53 INFO  : 'ps7_init' command is executed.
+14:57:53 INFO  : 'ps7_post_config' command is executed.
+14:57:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:57:53 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:57:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:57:53 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:57:53 INFO  : 'configparams force-mem-access 0' command is executed.
+14:57:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:57:53 INFO  : Memory regions updated for context APU
+14:57:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:57:53 INFO  : 'con' command is executed.
+14:57:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+14:57:53 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+14:59:26 INFO  : Disconnected from the channel tcfchan#1.
+14:59:28 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+15:44:07 INFO  : Registering command handlers for SDK TCF services
+15:44:08 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\temp_xsdb_launch_script.tcl
+15:44:10 INFO  : XSCT server has started successfully.
+15:44:11 INFO  : Processing command line option -hwspec C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf.
+15:44:11 INFO  : Successfully done setting XSCT server connection channel  
+15:44:11 INFO  : Checking for hwspec changes in the project System_wrapper_hw_platform_0.
+15:44:13 INFO  : Successfully done setting SDK workspace  
+15:49:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:50:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+15:50:03 INFO  : FPGA configured successfully with bitstream "C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/System_wrapper.bit"
+15:50:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+15:50:10 INFO  : 'fpga -state' command is executed.
+15:50:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:50:10 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+15:50:10 INFO  : 'jtag frequency' command is executed.
+15:50:10 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:50:10 INFO  : Context for 'APU' is selected.
+15:50:10 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+15:50:10 INFO  : 'configparams force-mem-access 1' command is executed.
+15:50:10 INFO  : Context for 'APU' is selected.
+15:50:10 INFO  : 'stop' command is executed.
+15:50:11 INFO  : 'ps7_init' command is executed.
+15:50:11 INFO  : 'ps7_post_config' command is executed.
+15:50:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:50:11 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:50:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:50:11 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:50:11 INFO  : 'configparams force-mem-access 0' command is executed.
+15:50:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:50:11 INFO  : Memory regions updated for context APU
+15:50:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:50:11 INFO  : 'con' command is executed.
+15:50:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+15:50:11 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+15:50:53 INFO  : Disconnected from the channel tcfchan#1.
+15:50:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+15:50:55 INFO  : 'fpga -state' command is executed.
+15:50:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:50:55 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+15:50:55 INFO  : 'jtag frequency' command is executed.
+15:50:55 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:50:55 INFO  : Context for 'APU' is selected.
+15:50:58 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+15:50:58 INFO  : 'configparams force-mem-access 1' command is executed.
+15:50:58 INFO  : Context for 'APU' is selected.
+15:50:58 INFO  : 'stop' command is executed.
+15:50:58 INFO  : 'ps7_init' command is executed.
+15:50:58 INFO  : 'ps7_post_config' command is executed.
+15:50:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:50:58 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:50:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:50:59 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:50:59 INFO  : 'configparams force-mem-access 0' command is executed.
+15:50:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:50:59 INFO  : Memory regions updated for context APU
+15:50:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:50:59 INFO  : 'con' command is executed.
+15:50:59 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+15:50:59 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+15:53:48 INFO  : Disconnected from the channel tcfchan#2.
+15:53:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+15:53:49 INFO  : 'fpga -state' command is executed.
+15:53:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:53:50 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+15:53:50 INFO  : 'jtag frequency' command is executed.
+15:53:50 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:53:50 INFO  : Context for 'APU' is selected.
+15:53:52 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+15:53:52 INFO  : 'configparams force-mem-access 1' command is executed.
+15:53:52 INFO  : Context for 'APU' is selected.
+15:53:52 INFO  : 'stop' command is executed.
+15:53:52 INFO  : 'ps7_init' command is executed.
+15:53:52 INFO  : 'ps7_post_config' command is executed.
+15:53:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:53:52 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:53:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:53:53 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:53:53 INFO  : 'configparams force-mem-access 0' command is executed.
+15:53:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:53:53 INFO  : Memory regions updated for context APU
+15:53:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:53:53 INFO  : 'con' command is executed.
+15:53:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+15:53:53 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+15:56:17 INFO  : Disconnected from the channel tcfchan#3.
+15:56:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+15:56:18 INFO  : 'fpga -state' command is executed.
+15:56:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:56:18 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+15:56:18 INFO  : 'jtag frequency' command is executed.
+15:56:18 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:56:18 INFO  : Context for 'APU' is selected.
+15:56:21 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+15:56:21 INFO  : 'configparams force-mem-access 1' command is executed.
+15:56:21 INFO  : Context for 'APU' is selected.
+15:56:21 INFO  : 'stop' command is executed.
+15:56:21 INFO  : 'ps7_init' command is executed.
+15:56:21 INFO  : 'ps7_post_config' command is executed.
+15:56:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:56:21 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+15:56:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:56:22 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:56:22 INFO  : 'configparams force-mem-access 0' command is executed.
+15:56:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:56:22 INFO  : Memory regions updated for context APU
+15:56:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:56:22 INFO  : 'con' command is executed.
+15:56:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+15:56:22 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+16:01:19 INFO  : Disconnected from the channel tcfchan#4.
+16:11:20 INFO  : Registering command handlers for SDK TCF services
+16:11:21 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\temp_xsdb_launch_script.tcl
+16:11:24 INFO  : XSCT server has started successfully.
+16:11:24 INFO  : Processing command line option -hwspec C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf.
+16:11:27 INFO  : Successfully done setting XSCT server connection channel  
+16:11:27 INFO  : Successfully done setting SDK workspace  
+16:11:27 INFO  : Checking for hwspec changes in the project System_wrapper_hw_platform_0.
+16:11:27 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1509664205988,  Project:1509659783980
+16:11:27 INFO  : The hardware specification for project 'System_wrapper_hw_platform_0' is different from C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf.
+16:11:27 INFO  : Copied contents of C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf into \System_wrapper_hw_platform_0\system.hdf.
+16:11:31 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+16:11:34 INFO  : 
+16:11:35 INFO  : Updating hardware inferred compiler options for LED_4ChannelPWM.
+16:11:35 INFO  : Clearing existing target manager status.
+16:11:35 WARN  : Given IPC port value is invalid. Using default port 2350
+16:11:35 WARN  : Given XMD timeout value is invalid. Using default value of 50000
+16:11:36 WARN  : Given XMD transaction timeout value is invalid. Using default value of 60000 milli seconds
+16:12:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:12:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+16:12:21 INFO  : FPGA configured successfully with bitstream "C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/System_wrapper.bit"
+16:12:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+16:12:27 INFO  : 'fpga -state' command is executed.
+16:12:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:12:27 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+16:12:27 INFO  : 'jtag frequency' command is executed.
+16:12:27 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:12:28 INFO  : Context for 'APU' is selected.
+16:12:28 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+16:12:28 INFO  : 'configparams force-mem-access 1' command is executed.
+16:12:28 INFO  : Context for 'APU' is selected.
+16:12:28 INFO  : 'stop' command is executed.
+16:12:29 INFO  : 'ps7_init' command is executed.
+16:12:29 INFO  : 'ps7_post_config' command is executed.
+16:12:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:12:29 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:12:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:12:29 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:12:29 INFO  : 'configparams force-mem-access 0' command is executed.
+16:12:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:12:29 INFO  : Memory regions updated for context APU
+16:12:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:12:30 INFO  : 'con' command is executed.
+16:12:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+16:12:30 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+16:14:58 INFO  : Disconnected from the channel tcfchan#1.
+16:14:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+16:14:59 INFO  : 'fpga -state' command is executed.
+16:14:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:15:00 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+16:15:00 INFO  : 'jtag frequency' command is executed.
+16:15:00 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:15:00 INFO  : Context for 'APU' is selected.
+16:15:02 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+16:15:02 INFO  : 'configparams force-mem-access 1' command is executed.
+16:15:02 INFO  : Context for 'APU' is selected.
+16:15:02 INFO  : 'stop' command is executed.
+16:15:02 INFO  : 'ps7_init' command is executed.
+16:15:02 INFO  : 'ps7_post_config' command is executed.
+16:15:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:15:03 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:15:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:15:03 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:15:03 INFO  : 'configparams force-mem-access 0' command is executed.
+16:15:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:15:03 INFO  : Memory regions updated for context APU
+16:15:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:15:03 INFO  : 'con' command is executed.
+16:15:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+16:15:03 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+16:16:21 INFO  : Disconnected from the channel tcfchan#2.
+16:16:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+16:16:22 INFO  : 'fpga -state' command is executed.
+16:16:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:16:22 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+16:16:22 INFO  : 'jtag frequency' command is executed.
+16:16:22 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:16:22 INFO  : Context for 'APU' is selected.
+16:16:22 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+16:16:22 INFO  : 'configparams force-mem-access 1' command is executed.
+16:16:22 INFO  : Context for 'APU' is selected.
+16:16:22 INFO  : 'stop' command is executed.
+16:16:23 INFO  : 'ps7_init' command is executed.
+16:16:23 INFO  : 'ps7_post_config' command is executed.
+16:16:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:16:23 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:16:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:16:23 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:16:23 INFO  : 'configparams force-mem-access 0' command is executed.
+16:16:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:16:23 INFO  : Memory regions updated for context APU
+16:16:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:16:24 INFO  : 'con' command is executed.
+16:16:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+16:16:24 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+16:24:22 INFO  : Disconnected from the channel tcfchan#3.
+16:24:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+16:24:24 INFO  : 'fpga -state' command is executed.
+16:24:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:24:24 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+16:24:24 INFO  : 'jtag frequency' command is executed.
+16:24:24 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:24:24 INFO  : Context for 'APU' is selected.
+16:24:24 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+16:24:24 INFO  : 'configparams force-mem-access 1' command is executed.
+16:24:24 INFO  : Context for 'APU' is selected.
+16:24:24 INFO  : 'stop' command is executed.
+16:24:25 INFO  : 'ps7_init' command is executed.
+16:24:25 INFO  : 'ps7_post_config' command is executed.
+16:24:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:24:25 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:24:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:24:25 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:24:25 INFO  : 'configparams force-mem-access 0' command is executed.
+16:24:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:24:25 INFO  : Memory regions updated for context APU
+16:24:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:24:25 INFO  : 'con' command is executed.
+16:24:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+16:24:25 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+16:27:43 INFO  : Disconnected from the channel tcfchan#4.
+16:27:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+16:27:44 INFO  : 'fpga -state' command is executed.
+16:27:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:27:44 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+16:27:44 INFO  : 'jtag frequency' command is executed.
+16:27:44 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:27:44 INFO  : Context for 'APU' is selected.
+16:27:44 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+16:27:44 INFO  : 'configparams force-mem-access 1' command is executed.
+16:27:44 INFO  : Context for 'APU' is selected.
+16:27:44 INFO  : 'stop' command is executed.
+16:27:45 INFO  : 'ps7_init' command is executed.
+16:27:45 INFO  : 'ps7_post_config' command is executed.
+16:27:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:27:45 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:27:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:27:45 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:27:45 INFO  : 'configparams force-mem-access 0' command is executed.
+16:27:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:27:45 INFO  : Memory regions updated for context APU
+16:27:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:27:46 INFO  : 'con' command is executed.
+16:27:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+16:27:46 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+16:28:48 INFO  : Disconnected from the channel tcfchan#5.
+16:28:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+16:28:49 INFO  : 'fpga -state' command is executed.
+16:28:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:28:50 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+16:28:50 INFO  : 'jtag frequency' command is executed.
+16:28:50 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:28:50 INFO  : Context for 'APU' is selected.
+16:28:50 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+16:28:50 INFO  : 'configparams force-mem-access 1' command is executed.
+16:28:50 INFO  : Context for 'APU' is selected.
+16:28:50 INFO  : 'stop' command is executed.
+16:28:50 INFO  : 'ps7_init' command is executed.
+16:28:50 INFO  : 'ps7_post_config' command is executed.
+16:28:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:28:51 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:28:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:28:51 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:28:51 INFO  : 'configparams force-mem-access 0' command is executed.
+16:28:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:28:51 INFO  : Memory regions updated for context APU
+16:28:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:28:51 INFO  : 'con' command is executed.
+16:28:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+16:28:51 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+16:31:39 INFO  : Disconnected from the channel tcfchan#6.
+16:31:40 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+16:46:57 INFO  : Registering command handlers for SDK TCF services
+16:46:58 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\temp_xsdb_launch_script.tcl
+16:47:00 INFO  : XSCT server has started successfully.
+16:47:00 INFO  : Processing command line option -hwspec C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf.
+16:47:00 INFO  : Successfully done setting XSCT server connection channel  
+16:47:00 INFO  : Checking for hwspec changes in the project System_wrapper_hw_platform_0.
+16:47:00 INFO  : Successfully done setting SDK workspace  
+16:47:03 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1509666348391,  Project:1509664205988
+16:47:03 INFO  : The hardware specification for project 'System_wrapper_hw_platform_0' is different from C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf.
+16:47:04 INFO  : Copied contents of C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf into \System_wrapper_hw_platform_0\system.hdf.
+16:47:08 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+16:47:11 INFO  : 
+16:47:12 INFO  : Updating hardware inferred compiler options for LED_4ChannelPWM.
+16:47:12 INFO  : Clearing existing target manager status.
+16:47:12 WARN  : Given IPC port value is invalid. Using default port 2350
+16:47:12 WARN  : Given XMD timeout value is invalid. Using default value of 50000
+16:47:14 WARN  : Given XMD transaction timeout value is invalid. Using default value of 60000 milli seconds
+16:47:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:47:45 ERROR : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' is cancelled.
+16:47:45 INFO  : Issued abort command to xsdb.
+16:48:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+16:48:13 INFO  : 'fpga -state' command is executed.
+16:48:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:48:13 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+16:48:13 INFO  : 'jtag frequency' command is executed.
+16:48:13 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:48:13 INFO  : Context for 'APU' is selected.
+16:48:13 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+16:48:13 INFO  : 'configparams force-mem-access 1' command is executed.
+16:48:13 INFO  : Context for 'APU' is selected.
+16:48:13 INFO  : 'stop' command is executed.
+16:48:14 INFO  : 'ps7_init' command is executed.
+16:48:14 INFO  : 'ps7_post_config' command is executed.
+16:48:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:48:14 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:48:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:48:14 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:48:14 INFO  : 'configparams force-mem-access 0' command is executed.
+16:48:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:48:14 INFO  : Memory regions updated for context APU
+16:48:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:48:14 INFO  : 'con' command is executed.
+16:48:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+16:48:14 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+16:49:25 INFO  : Disconnected from the channel tcfchan#1.
+16:49:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+16:49:26 INFO  : 'fpga -state' command is executed.
+16:49:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:49:27 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+16:49:27 INFO  : 'jtag frequency' command is executed.
+16:49:27 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:49:27 INFO  : Context for 'APU' is selected.
+16:49:29 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+16:49:29 INFO  : 'configparams force-mem-access 1' command is executed.
+16:49:29 INFO  : Context for 'APU' is selected.
+16:49:29 INFO  : 'stop' command is executed.
+16:49:30 INFO  : 'ps7_init' command is executed.
+16:49:30 INFO  : 'ps7_post_config' command is executed.
+16:49:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:49:30 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:49:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:49:30 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:49:30 INFO  : 'configparams force-mem-access 0' command is executed.
+16:49:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:49:30 INFO  : Memory regions updated for context APU
+16:49:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:49:30 INFO  : 'con' command is executed.
+16:49:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+16:49:30 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+16:56:59 INFO  : Disconnected from the channel tcfchan#2.
+16:57:01 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+17:02:07 INFO  : Registering command handlers for SDK TCF services
+17:02:08 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\temp_xsdb_launch_script.tcl
+17:02:11 INFO  : XSCT server has started successfully.
+17:02:11 INFO  : Successfully done setting XSCT server connection channel  
+17:02:11 INFO  : Processing command line option -hwspec C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf.
+17:02:11 INFO  : Successfully done setting SDK workspace  
+17:02:11 INFO  : Checking for hwspec changes in the project System_wrapper_hw_platform_0.
+17:02:14 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1509667294128,  Project:1509666348391
+17:02:14 INFO  : The hardware specification for project 'System_wrapper_hw_platform_0' is different from C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf.
+17:02:15 INFO  : Copied contents of C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf into \System_wrapper_hw_platform_0\system.hdf.
+17:02:19 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+17:02:22 INFO  : 
+17:02:23 INFO  : Updating hardware inferred compiler options for LED_4ChannelPWM.
+17:02:23 INFO  : Clearing existing target manager status.
+17:02:23 WARN  : Given IPC port value is invalid. Using default port 2350
+17:02:23 WARN  : Given XMD timeout value is invalid. Using default value of 50000
+17:02:25 WARN  : Given XMD transaction timeout value is invalid. Using default value of 60000 milli seconds
+17:02:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:02:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+17:02:40 INFO  : FPGA configured successfully with bitstream "C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/System_wrapper.bit"
+17:03:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+17:03:12 INFO  : 'fpga -state' command is executed.
+17:03:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:03:12 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+17:03:12 INFO  : 'jtag frequency' command is executed.
+17:03:12 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:03:12 INFO  : Context for 'APU' is selected.
+17:03:12 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+17:03:12 INFO  : 'configparams force-mem-access 1' command is executed.
+17:03:12 INFO  : Context for 'APU' is selected.
+17:03:12 INFO  : 'stop' command is executed.
+17:03:13 INFO  : 'ps7_init' command is executed.
+17:03:13 INFO  : 'ps7_post_config' command is executed.
+17:03:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:03:13 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+17:03:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:03:13 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:03:13 INFO  : 'configparams force-mem-access 0' command is executed.
+17:03:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:03:14 INFO  : Memory regions updated for context APU
+17:03:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:03:14 INFO  : 'con' command is executed.
+17:03:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+17:03:14 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+17:03:18 INFO  : Disconnected from the channel tcfchan#1.
+17:03:19 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+17:03:45 INFO  : Registering command handlers for SDK TCF services
+17:03:46 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\temp_xsdb_launch_script.tcl
+17:03:48 INFO  : XSCT server has started successfully.
+17:03:49 INFO  : Successfully done setting XSCT server connection channel  
+17:03:49 INFO  : Processing command line option -hwspec C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper.hdf.
+17:03:49 INFO  : Checking for hwspec changes in the project System_wrapper_hw_platform_0.
+17:03:49 INFO  : Successfully done setting SDK workspace  
+17:04:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:04:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+17:04:25 INFO  : FPGA configured successfully with bitstream "C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/System_wrapper.bit"
+17:04:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A42709A" && level==0} -index 1' command is executed.
+17:04:32 INFO  : 'fpga -state' command is executed.
+17:04:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:04:32 INFO  : Jtag cable 'Digilent Zybo 210279A42709A' is selected.
+17:04:32 INFO  : 'jtag frequency' command is executed.
+17:04:32 INFO  : Sourcing of 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:04:33 INFO  : Context for 'APU' is selected.
+17:04:33 INFO  : Hardware design information is loaded from 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf'.
+17:04:33 INFO  : 'configparams force-mem-access 1' command is executed.
+17:04:33 INFO  : Context for 'APU' is selected.
+17:04:33 INFO  : 'stop' command is executed.
+17:04:33 INFO  : 'ps7_init' command is executed.
+17:04:33 INFO  : 'ps7_post_config' command is executed.
+17:04:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:04:34 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+17:04:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:04:34 INFO  : The application 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:04:34 INFO  : 'configparams force-mem-access 0' command is executed.
+17:04:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+loadhw -hw C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/System_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+dow C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.sdk/LED_4ChannelPWM/Debug/LED_4ChannelPWM.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:04:34 INFO  : Memory regions updated for context APU
+17:04:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:04:34 INFO  : 'con' command is executed.
+17:04:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zybo 210279A42709A"} -index 0
+con
+----------------End of Script----------------
+
+17:04:34 INFO  : Launch script is exported to file 'C:\Users\jlrei\Documents\SourceTree\EE324_Lab4ext\EE324_Lab4ext.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_4channelpwm.elf_on_local.tcl'
+17:09:23 INFO  : Disconnected from the channel tcfchan#1.

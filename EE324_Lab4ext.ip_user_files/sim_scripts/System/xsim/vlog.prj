@@ -1,0 +1,14 @@
+verilog xil_defaultlib --include "../../../../EE324_Lab4ext.srcs/sources_1/bd/System/ipshared/ec67/hdl" --include "../../../../EE324_Lab4ext.srcs/sources_1/bd/System/ipshared/d5d3/hdl/verilog" --include "../../../../EE324_Lab4ext.srcs/sources_1/bd/System/ipshared/e0a2/hdl" \
+"../../../bd/System/ipshared/669d/src/Clock_Divider.v" \
+"../../../bd/System/ipshared/669d/src/PWM_Comparator.v" \
+"../../../bd/System/ipshared/669d/src/PWM_Counter.v" \
+"../../../bd/System/ipshared/669d/hdl/Zybo_PWMext_v1_0_S_AXI.v" \
+"../../../bd/System/ipshared/669d/hdl/Zybo_PWMext_v1_0.v" \
+"../../../bd/System/ip/System_Zybo_PWMext_0_0/sim/System_Zybo_PWMext_0_0.v" \
+"../../../bd/System/ip/System_processing_system7_0_0/sim/System_processing_system7_0_0.v" \
+"../../../bd/System/sim/System.v" \
+"../../../bd/System/ip/System_auto_pc_0/sim/System_auto_pc_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

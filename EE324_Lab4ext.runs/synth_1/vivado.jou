@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.3.1 (64-bit)
+# SW Build 2035080 on Fri Oct 20 14:20:01 MDT 2017
+# IP Build 2034413 on Fri Oct 20 15:56:25 MDT 2017
+# Start of session at: Thu Nov  2 16:57:15 2017
+# Process ID: 15452
+# Current directory: C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.runs/synth_1
+# Command line: vivado.exe -log System_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source System_wrapper.tcl
+# Log file: C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.runs/synth_1/System_wrapper.vds
+# Journal file: C:/Users/jlrei/Documents/SourceTree/EE324_Lab4ext/EE324_Lab4ext.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source System_wrapper.tcl -notrace

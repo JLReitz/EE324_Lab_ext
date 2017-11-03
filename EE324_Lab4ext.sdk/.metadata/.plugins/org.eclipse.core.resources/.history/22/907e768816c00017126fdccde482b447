@@ -1,0 +1,130 @@
+/*
+ * main.c
+ *
+ *  Created on: Nov 2, 2017
+ *      Author: jlrei
+ */
+
+#include "xparameters.h"
+
+#define PWM_en_baseaddr 0x43c00000
+#define PWM_duty_baseaddr 0x43c00004
+#define PWM_frequency_baseaddr 0x43c00010
+
+/**
+ * This function enables the specified PWM Channel
+ *
+ * @param baseAddr is the base address of the targeted MYPWM controller
+ *
+ * @return None
+ */
+void PWM_Enable(u32 * baseAddr, int channel)
+{
+    // Enable PWM Controller
+	switch(channel)
+	{
+	case 0:
+		*baseAddr = (*baseAddr) | 0b0001;
+		break;
+	case 1:
+		*baseAddr = (*baseAddr) | 0b0010;
+		break;
+	case 2:
+		*baseAddr = (*baseAddr) | 0b0100;
+		break;
+	case 3:
+		*baseAddr = (*baseAddr) | 0b1000;
+		break;
+	}
+}
+
+/**
+ * This function disables the specified PWM Channel
+ *
+ * @param baseAddr is the base address of the targeted MYPWM controller
+ *
+ * @return None
+ */
+void PWM_Disable(u32 * baseAddr, int channel)
+{
+    // Disable PWM Controller
+	switch(channel)
+	{
+	case 0:
+		*baseAddr = (*baseAddr) & 0b1110;
+		break;
+	case 1:
+		*baseAddr = (*baseAddr) &  0b1101;
+		break;
+	case 2:
+		*baseAddr = (*baseAddr) &  0b1011;
+		break;
+	case 3:
+		*baseAddr = (*baseAddr) &  0b0111;
+		break;
+	}
+}
+
+
+/**
+ * This function sets the PWM duty cycle.
+ *
+ * @param baseAddr is the base address of the targeted MYPWM controller
+ * @param pwmValue is the width of pulse
+ *
+ * @return None
+ */
+void PWM_SetValue(u32 * baseAddr, int channel, u32 pwmValue)
+{
+    // Set PWM Value
+	*(baseAddr+(u32)channel) = pwmValue;
+}
+
+/**
+ * Set PWM Window Frequency
+ *
+ * @param baseAddr is the base address of the targeted MYPWM controller
+ * @param channel is the channel ID to be enabled.
+ * @param frequency is the PWM window frequency in Hz.
+ *
+ * @return None
+ */
+void PWM_SetWindowFrequency(u32 * baseAddr, int channel, u32 frequency)
+{
+    // Set PWM Window Frequency
+	*(baseAddr+(u32)channel) = frequency;
+}
+
+void msleep(u32 msec)
+{
+    volatile u32 i = 0;
+    for(i = 0; i < msec * 1000000; i++);
+}
+
+void main()
+{
+    volatile u32 j = 0;
+    int k = 0;
+
+    PWM_Enable((u32 *)PWM_en_baseaddr, 0);
+    PWM_Enable((u32 *)PWM_en_baseaddr, 1);
+    PWM_Enable((u32 *)PWM_en_baseaddr, 2);
+    PWM_Enable((u32 *)PWM_en_baseaddr, 3);
+    PWM_SetWindowFrequency((u32 *)PWM_frequency_baseaddr, 0, 4000);
+    PWM_SetWindowFrequency((u32 *)PWM_frequency_baseaddr, 1, 40);
+    PWM_SetWindowFrequency((u32 *)PWM_frequency_baseaddr, 2, 10);
+    PWM_SetWindowFrequency((u32 *)PWM_frequency_baseaddr, 3, 2);
+
+    while(1)
+    {
+        if (j > 0x3FFUL) {
+            j = 0;
+        }
+        for(k = 0; k < 4; k++) {
+            PWM_SetValue((u32 *)PWM_duty_baseaddr, k, j);
+        }
+        j = j + 0x100;
+        msleep(500);
+    }
+}
+
